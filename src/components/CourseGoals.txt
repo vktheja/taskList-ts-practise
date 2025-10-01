@@ -1,0 +1,44 @@
+import { type FC, type PropsWithChildren, type ReactNode } from "react";
+
+// type CourseGoalProps = {
+//   title: string;
+//   children: ReactNode; // for childeren prop. The type is ReactNode
+// };
+
+// or for accesing chilren we can use the generic PropsWithChildren type
+
+type CourseGoalProps = PropsWithChildren<{ title: string }>;
+
+const CourseGoal = (props: CourseGoalProps) => {
+  const { title, children } = props;
+  return (
+    <article>
+      <div>
+        <h2>{title}</h2>
+        {children}
+      </div>
+      <button>DELETE</button>
+    </article>
+  );
+};
+
+export default CourseGoal;
+
+// or
+
+// const CourseGoal: FC<CourseGoalProps> = (props) => {
+//   const { title, children } = props;
+//   return (
+//     <article>
+//       <div>
+//         <h2>{title}</h2>
+//         {children}
+//       </div>
+//       <button>DELETE</button>
+//     </article>
+//   );
+// };
+
+// export default CourseGoal;
+
+// or
